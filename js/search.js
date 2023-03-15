@@ -66,9 +66,9 @@ window.onload = () => {
 
                         if (response.ok) {
                             const dataSplit = await response.json()
-                            if (data.total_count == dataSplit.total_count) break
                             // вывод "Ничего не найдено!" при отсутвии результата
                             dataSplit.total_count == 0 ? error.innerHTML = "Ничего не найдено!" : ""
+                            if (data.total_count == dataSplit.total_count) break
                             createRepositTreeBlok(dataSplit)
                         }
                         else {
